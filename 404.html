@@ -38,16 +38,22 @@
         console.log(homepage);
 
         var xhr = new XMLHttpRequest();
+        
+        console.log(xhr);
 
         xhr.onload = function () {
           try {
             var payload = JSON.parse(xhr.response);
+            console.log(payload);
             var message = payload.message;
+            console.log(message);
             var title = payload.title;
+            console.log(title);
 
             // Workaround IE 11 lack of support for new URL()
             var url = document.createElement("a");
             url.setAttribute("href", title);
+            console.log(url);
 
             // Invalid URLs includes invalid issue numbers, issue titles that are not URLs, and recursive destination URLs
             var isInvalidUrl =
@@ -60,7 +66,7 @@
             console.log(homepage);
             console.log(title);
             
-            location.replace(title);
+            //location.replace(title);
             
             /*if (isInvalidUrl) {
               location.replace(homepage);
