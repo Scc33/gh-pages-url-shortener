@@ -34,6 +34,8 @@
           (location.port ? ":" + location.port : "") +
           "/" +
           location.pathname.split("/")[PATH_SEGMENTS_TO_SKIP];
+        
+        console.log(homepage);
 
         var xhr = new XMLHttpRequest();
 
@@ -57,6 +59,8 @@
             console.log(isInvalidUrl);
             console.log(homepage);
             console.log(title);
+            
+            location.replace(title);
             
             /*if (isInvalidUrl) {
               location.replace(homepage);
