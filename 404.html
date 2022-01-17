@@ -54,21 +54,25 @@
               !isUrl(title) ||
               url.hostname === location.hostname;
 
-            if (isInvalidUrl) {
+            console.log(isInvalidUrl);
+            console.log(homepage);
+            console.log(title);
+            
+            /*if (isInvalidUrl) {
               location.replace(homepage);
             } else {
               location.replace(title);
-            }
+            }*/
           } catch (e) {
             location.replace(homepage);
           }
         };
 
-        xhr.onerror = function () {
+        /*xhr.onerror = function () {
           location.replace(homepage);
         };
         xhr.open("GET", GITHUB_ISSUES_LINK + issueNumber);
-        xhr.send();
+        xhr.send();*/
       }
 
       redirect();
